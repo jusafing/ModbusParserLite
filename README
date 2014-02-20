@@ -1,1 +1,66 @@
+Modbus parser lite v0.1.0
+-------------------------
+
+README File
+
+-------------------------
+DESCRIPTION
+
+This script is a simple Modbus Parser. It uses Argus binary data to extract
+the TCP streams in order to parse the Modbus Headers. 
+
+It creates an output plain-text file with all the Modbus headers for every
+single TCP stream. It is possible to define three operation modes:
+  1 - Parse requests  only
+  2 - Parse responses only
+  3 - Parse full TCP streams
+
+It also creates a file with all single Modbus Headers as well as a general
+log file.
+
+
+-------------------------
+REQUIREMENTS
+
+- Argus server
+- Ra client
+
+Perl Modules:
+ - File::Touch
+
+
+-------------------------
+USAGE
+
+First you need to configure the execution parameters within ParseConfig.pm
+
+Then you can use it with the following syntax:
+
+    $ ./modbus_parser.pl <PCAP_FILE> [LOGFILE]
+
+** NOTE **:
+It will create the output files on the same path of PCAP_FILE.
+The log file defined as an argument overwrites the one on ParseConfig.pm
+
+-------------------------
+TODO
+
+- Arguments validation
+- Use exec instead of direct shell call ``
+- Use output directory variable
+- Improve the performance skipping LogMsgT calls or to improme LogUtils.pm
+
+
+-------------------------
+AUTHOR
+  
+By Javier S.A. 
+jusafing@gmail.com
+(2014)
+
+You can use git to get a copy of this parser from
+
+http://repository.jusanet.org
+
+
 
